@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let randomNumber = Math.random();
+      let guess = prompt("enter head or tail in lower  case only");
+      let result = randomNumber < 0.5 ? "head" : "tail";
+      if (guess === result) {
+        document.write("you Win\n");
+        document.write(
+          `Your choice is : ${guess} computer choice is : ${result}`
+        );
+      } else {
+        document.write("you lose\n");
+        document.write(
+          `Your choice is : ${guess} computer choice is : ${result}`
+        );
+      }
+    </script>
+  </body>
+</html>
