@@ -49,14 +49,14 @@
         console.log(cartQuantity);
       }
       function deleteFromCart(items) {
-        if (cartQuantity > 0) {
+        if (cartQuantity + items >= 0) {
           updateCalculation(items);
         } else {
           alert(`Not enough items in the cart`);
         }
       }
       function addToCart(items) {
-        if (cartQuantity >= 10) {
+        if (cartQuantity + items > 10) {
           alert(`The cart is full don't update yothe quantity `);
         } else {
           updateCalculation(items);
