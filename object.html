@@ -7,6 +7,7 @@
   </head>
   <body>
     <script>
+      /*
       const product = {
         name: "shirt",
         "delivery-time": "1 day",
@@ -25,6 +26,85 @@
       console.log(product);
       console.log(product.rating.count);
       product.fun();
+      */
+
+      /*
+      const product = {
+        name: "shirt",
+        "delivery-time": "1 day",
+        rating: {
+          stars: 4.5,
+          count: 45,
+        },
+        fun: function function1() {
+          console.log("function inside the object");
+        },
+      };
+      //yo convert js object to JSON object
+      let jsonObject = JSON.stringify(product);
+      //to convert JSON object to js object
+      console.log(JSON.parse(jsonObject));
+      */
+
+      /*
+      //pernment browser storage
+      //to set the item
+      localStorage.setItem("name", "John");
+      //to get the item
+      console.log(localStorage.getItem("name"));
+      //to remove the item
+      localStorage.removeItem("name");
+      const product = {
+        name: "shirt",
+        "delivery-time": "1 day",
+      };
+      localStorage.setItem("product", JSON.stringify(product));
+      console.log(JSON.parse(localStorage.getItem("product")));
+      */
+
+      /*
+      let object1 = {
+        message: "Good morning",
+      };
+      //it will store the reference of the object 1
+      let object2 = object1;
+      //if we will change the value of the obj2 it will also change the obj1
+      object2.message = "Good night";
+      console.log(object1);
+      console.log(object1);
+      //object comparision
+      let object3 = {
+        message: "Good night",
+      };
+      //it will compare by the refernce not on the values
+      console.log(object3 === object1);
+      console.log(object2 === object1);
+      */
+
+      let object1 = {
+        message: "Good morning",
+        price: 256,
+      };
+      //destructuring
+      //let message=object1.message for one
+      // let { message } = object1;
+      // console.log(message);
+      let { message, price } = object1;
+      console.log(message, price);
+      let object2 = {
+        //message:message
+        //shorthand property for above one
+        message,
+        /*method: function funtion1() {
+          console.log("Hello");
+        },*/
+        //shorthand method for above method
+        method() {
+          console.log("Hello");
+        },
+      };
+      console.log(object2.message);
+      object2.method();
     </script>
   </body>
 </html>
