@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM -Excerise</title>
+  </head>
+  <body>
+    <!-- <button>9a</button>
+    <button class="bbtn">9b</button> -->
+
+    <button class="head" onclick="choice('Heads')">Heads</button>
+    <button class="tail" onclick="choice('Tails')">Tails</button>
+    <p class="result"></p>
+    <script>
+      function choice(res) {
+        const p = (document.querySelector(
+          ".result"
+        ).innerText = `You chose : ${res}`);
+      }
+      // console.log(document.querySelector("button"));
+      // const secondBtn = document.querySelector(".bbtn");
+      // secondBtn.innerHTML += " done!";
+      // console.log(secondBtn.innerHTML);
+    </script>
+  </body>
+</html>
