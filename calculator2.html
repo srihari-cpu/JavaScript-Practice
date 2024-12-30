@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p class="display"></p>
+    <div>
+      <button onclick="display('1')">1</button>
+      <button onclick="display('2')">2</button>
+      <button onclick="display('3')">3</button>
+    </div>
+    <div>
+      <button onclick="display('4')">4</button>
+      <button onclick="display('5')">5</button>
+      <button onclick="display('6')">6</button>
+    </div>
+    <div>
+      <button onclick="display('7')">7</button>
+      <button onclick="display('8')">8</button>
+      <button onclick="display('9')">9</button>
+    </div>
+    <div>
+      <button onclick="display('+')">+</button>
+      <button onclick="display('-')">-</button>
+      <button onclick="display('*')">*</button>
+    </div>
+    <div>
+      <button onclick="display('/')">/</button>
+      <button onclick="calculate(calculator)">=</button>
+      <button
+        onclick="calculator=''
+      display('')"
+      >
+        Clear
+      </button>
+    </div>
+    <script>
+      let calculator = localStorage.getItem("cal") || "";
+
+      function display(val) {
+        calculator += val;
+        document.querySelector(".display").innerHTML = calculator;
+      }
+      calculate(calculator);
+      function calculate(val) {
+        document.querySelector(".display").innerHTML = eval(val);
+        localStorage.setItem("cal", eval(val));
+      }
+    </script>
+  </body>
+</html>
