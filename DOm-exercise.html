@@ -9,19 +9,49 @@
     <!-- <button>9a</button>
     <button class="bbtn">9b</button> -->
 
-    <button class="head" onclick="choice('Heads')">Heads</button>
+    <!-- <button class="head" onclick="choice('Heads')">Heads</button>
     <button class="tail" onclick="choice('Tails')">Tails</button>
-    <p class="result"></p>
+    <p class="result"></p> -->
+
+    <input
+      type="text"
+      class="wish"
+      placeholder="Name"
+      onkeydown="handleDisplayName(event)"
+    />
+    <button onclick="displayName()">Submit</button>
+    <p class="res"></p>
+
     <script>
+      /*
+      console.log(document.querySelector("button"));
+      const secondBtn = document.querySelector(".bbtn");
+      secondBtn.innerHTML += " done!";
+      console.log(secondBtn.innerHTML);
+      */
+
+      /*
       function choice(res) {
         const p = (document.querySelector(
           ".result"
         ).innerText = `You chose : ${res}`);
       }
-      // console.log(document.querySelector("button"));
-      // const secondBtn = document.querySelector(".bbtn");
-      // secondBtn.innerHTML += " done!";
-      // console.log(secondBtn.innerHTML);
+      */
+
+      function handleDisplayName(event) {
+        if (event.key === "Enter") {
+          displayName();
+        }
+      }
+      function displayName() {
+        const input = document.querySelector(".wish");
+        let name = input.value;
+        if (name) {
+          document.querySelector(".res").innerHTML = `You name is : ${name}`;
+        } else {
+          alert(`Please enter tha name`);
+        }
+      }
     </script>
   </body>
 </html>
