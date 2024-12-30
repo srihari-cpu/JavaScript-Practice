@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>Show Quantity</button>
+    <button
+      onclick="
+      addToCart(1)"
+    >
+      Add to cart
+    </button>
+    <button
+      onclick="
+      addToCart(2)"
+    >
+      +2
+    </button>
+    <button
+      onclick="
+      addToCart(3)      "
+    >
+      +3
+    </button>
+    <button
+      onclick="
+      addToCart(4)      "
+    >
+      +4
+    </button>
+    <button
+      onclick="
+      addToCart(5)      "
+    >
+      +5
+    </button>
+    <button
+      onclick="
+      deleteFromCart(-1)"
+    >
+      Remove from cart
+    </button>
+    <button
+      onclick="
+      deleteFromCart(-2)"
+    >
+      -2
+    </button>
+    <button
+      onclick="
+      deleteFromCart(-3)"
+    >
+      -3
+    </button>
+    <p class="ptag">Cart quantity : 0</p>
+    <script>
+      let cartQuantity = 0;
+      function updateCalculation(items) {
+        cartQuantity += items;
+        const ptag = document.querySelector(".ptag");
+        ptag.innerHTML = `Cart quantity : ${cartQuantity}`;
+      }
+      function deleteFromCart(items) {
+        if (cartQuantity + items >= 0) {
+          updateCalculation(items);
+        } else {
+          alert(`Not enough items in the cart`);
+        }
+      }
+      function addToCart(items) {
+        if (cartQuantity + items > 10) {
+          alert(`The cart is full don't update yothe quantity `);
+        } else {
+          updateCalculation(items);
+        }
+      }
+    </script>
+  </body>
+</html>
