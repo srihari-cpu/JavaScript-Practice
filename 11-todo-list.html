@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo-List</title>
+  </head>
+  <body>
+    <p>Todo List Practice 1</p>
+    <input type="text" placeholder="Todo name" class="js-input" />
+    <button onclick="addItem()">Add</button>
+    <p>Todo List Practice 2</p>
+    <input type="text" placeholder="Todo name" class="js-input2" />
+    <button onclick="addTodo()">ADD</button>
+    <div class="res"></div>
+    <script>
+      let multipleItems = ["to watch movie", "to enjoy"];
+      addTodo();
+      function addTodo() {
+        const inputButton2 = document.querySelector(".js-input2");
+        const values = inputButton2.value;
+        multipleItems.push(values);
+        inputButton2.value = "";
+        let todoHtml = "";
+        for (let i = 0; i < multipleItems.length; i++) {
+          let html = `<p>${multipleItems[i]}</p><br/>`;
+          todoHtml += html;
+        }
+        document.querySelector(".res").innerHTML = todoHtml;
+      }
+
+      // for (let i = 0; i < multipleItems.length; i++) {
+      //   console.log(multipleItems[i]);
+      //   let html = `<p>${multipleItems[i]}</p><br/>`;
+      //   todoHtml += html;
+      // }
+      // console.log(todoHtml);
+
+      /*
+      let items = [];
+      function addItem() {
+        const inputButton = document.querySelector(".js-input");
+        const value = inputButton.value;
+        items.push(value);
+        console.log(items);
+        inputButton.value = "";
+      }
+      */
+    </script>
+  </body>
+</html>
