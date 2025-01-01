@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>10a</title>
+    <style>
+      .add-to-cart {
+        width: 200px;
+        color: black;
+        background-color: rgb(255, 216, 20);
+        font-size: 20px;
+        font-weight: bold;
+        border-radius: 20px;
+        border: none;
+        padding: 10px;
+      }
+      .req-btn {
+        color: rgba(255, 255, 255, 0.847);
+        background-color: black;
+        border: none;
+        border-radius: 5px;
+        height: 40px;
+        width: 130px;
+        font-weight: bold;
+        margin-left: 10px;
+      }
+      .sch-btn {
+        color: black;
+        background-color: rgb(230, 230, 230);
+        border: none;
+        border-radius: 5px;
+        height: 40px;
+        width: 170px;
+        font-weight: bold;
+        margin-left: 10px;
+      }
+      .black {
+        background-color: rgb(230, 230, 230);
+      }
+      .is-toggled {
+        background-color: rgb(230, 230, 230);
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="addTOCart()" class="add-to-cart">Add to Cart</button>
+    <button class="req-btn">Request now</button>
+    <button class="sch-btn">Schedule for later</button><br />
+    <button class="js-button" style="margin-top: 30px">Test</button><br />
+    <button id="gaming" class="req-btn" onclick="playGame()">Gaming</button>
+    <button id="music" class="req-btn" onclick="playMusic()">Music</button>
+    <button id="tech" class="req-btn" onclick="playTech()">Tech</button>
+
+    <script>
+      function playTech() {
+        let techButton = document.querySelector("#tech");
+        checking(techButton);
+      }
+
+      function playMusic() {
+        let musicButton = document.querySelector("#music");
+        checking(musicButton);
+      }
+
+      function playGame() {
+        let gameButton = document.querySelector("#gaming");
+        checking(gameButton);
+      }
+
+      function checking(btn) {
+        if (!btn.classList.contains("is-toggled")) {
+          btn.classList.add("is-toggled");
+        } else {
+          btn.classList.remove("is-toggled");
+        }
+      }
+
+      function addTOCart() {
+        alert("Item added to cart");
+      }
+    </script>
+  </body>
+</html>
