@@ -6,27 +6,47 @@
     <title>Todo-List</title>
   </head>
   <body>
-    <p>Todo List Practice 1</p>
+    <!-- <p>Todo List Practice 1</p>
     <input type="text" placeholder="Todo name" class="js-input" />
-    <button onclick="addItem()">Add</button>
+    <button onclick="addItem()">Add</button> -->
     <p>Todo List Practice 2</p>
     <input type="text" placeholder="Todo name" class="js-input2" />
+    <input type="date" />
     <button onclick="addTodo()">ADD</button>
     <div class="res"></div>
     <script>
-      let multipleItems = ["to watch movie", "to enjoy"];
+      let multipleItems = [
+        {
+          name: "to watch movie",
+          dueDate: "2022-12-22",
+        },
+        {
+          name: "to enjoy",
+          dueDate: "2022-12-22",
+        },
+      ];
       addTodo();
       function addTodo() {
         const inputButton2 = document.querySelector(".js-input2");
         const values = inputButton2.value;
-        multipleItems.push(values);
+        multipleItems.push({
+          name:values,
+          dueDate:dueDate,
+        );
         inputButton2.value = "";
         let todoHtml = "";
         for (let i = 0; i < multipleItems.length; i++) {
-          let html = `<p>${multipleItems[i]}</p><br/>`;
+          const { name, dueDate } = multipleItems;
+          let html = `
+          <p>${name} ${dueDate}
+            <button onclick="
+            multipleItems.splice(${i},1);
+             addTodo();">Delete</button>
+             </p>`;
           todoHtml += html;
         }
         document.querySelector(".res").innerHTML = todoHtml;
+        console.log(todoHtml);
       }
 
       // for (let i = 0; i < multipleItems.length; i++) {
