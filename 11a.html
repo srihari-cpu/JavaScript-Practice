@@ -8,6 +8,7 @@
 
   <body>
     <script>
+      /*
       const nums = [10, 20, 30];
       nums[2] = 99;
       console.log(nums);
@@ -134,6 +135,136 @@
       }
 
       console.log(countWords(["apple", "grape", "apple", "apple"]));
+      */
+      /*
+      const array1 = [1, 2, 3, 4, 5];
+      const array2 = array1.slice(); //it make copy of the array1 instead of reference
+      array2.push(88);
+      console.log(array1);
+      console.log(array2);
+      const [a, b] = [1, 2, 3, 4, 5]; //ab maps to first two vaues in the array
+      console.log(a);
+      console.log(b);
+
+      function search(arr) {
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i] === "search") {
+            return i;
+          }
+        }
+        return -1;
+      }
+      console.log(search(["hello", "world", "search", "good"]));
+      console.log(search(["not", "found"]));
+      console.log(search(["hello", "world", "search", "good", "search"])); //return the first apperence index
+
+
+      function findIndex(arr, word) {
+        let index;
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i] === word) {
+            index = i;
+            break;
+          }
+        }
+        if (index >= 0) {
+          console.log(index);
+        } else {
+          console.log(-1);
+        }
+      }
+      findIndex(["green", "red", "blue", "red"], "red");
+      findIndex(["green", "red", "blue", "red"], "yellow");
+
+
+      function removeEgg(foods) {
+        let result = [];
+        for (let i = 0; i < foods.length; i++) {
+          if (foods[i] === "egg") {
+            continue;
+          } else {
+            result.push(foods[i]);
+          }
+        }
+        console.log(result);
+      }
+      removeEgg(["egg", "apple", "egg", "egg", "ham"]);
+
+
+      function removeTwoEggs(foods) {
+        let result = [];
+        let count = 0;
+        for (let i = 0; i < foods.length; i++) {
+          if (foods[i] === "egg") {
+            count++;
+            if (count > 2) {
+              result.push(foods[i]);
+            }
+          } else {
+            result.push(foods[i]);
+          }
+        }
+        console.log(result);
+      }
+      removeTwoEggs(["egg", "apple", "egg", "egg", "ham"]);
+
+
+      function removeTwoEggsInReverse(items) {
+        let foods = items.slice();
+        foods = foods.reverse();
+        let result = [];
+        let count = 0;
+        for (let i = 0; i < foods.length; i++) {
+          if (foods[i] === "egg") {
+            count++;
+            if (count > 2) {
+              result.push(foods[i]);
+            }
+          } else {
+            result.push(foods[i]);
+          }
+        }
+        console.log(result.reverse());
+      }
+      const foods = ["egg", "apple", "egg", "egg", "ham"];
+      console.log(foods);
+      removeTwoEggsInReverse(foods);
+      console.log(foods);
+      
+      for (let i = 1; i <= 20; i++) {
+        if (i % 3 === 0 && i % 5 === 0) {
+          console.log("FizzBuzz");
+        } else if (i % 5 === 0) {
+          console.log("Buzz");
+        } else if (i % 3 === 0) {
+          console.log("Fizz");
+        } else {
+          console.log(i);
+        }
+      }
+        */
+      function findIndex(arr, word) {
+        let index;
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i] === word) {
+            return i;
+          }
+        }
+        return -1;
+      }
+
+      function unique(array) {
+        const result = [];
+        for (let i = 0; i < array.length; i++) {
+          const word = array[i];
+          if (findIndex(result, word) === -1) {
+            result.push(word);
+          }
+        }
+        return result;
+      }
+      console.log(unique(["green", "red", "blue", "red"]));
+      console.log(unique(["red", "green", "green", "red"]));
     </script>
   </body>
 </html>
